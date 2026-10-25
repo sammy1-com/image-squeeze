@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>image-squeeze</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>image-squeeze</h1>
+      <p>Upload forms that say "max 2 MB". Shrink your photos here, in the browser. Nothing is uploaded anywhere.</p>
+    </header>
+
+    <label id="drop" class="drop">
+      <input id="files" type="file" accept="image/*" multiple hidden>
+      <b>Drop images here</b>
+      <span>or click to choose files</span>
+    </label>
+
+    <section class="opts">
+      <label>Quality <output id="q-out">75%</output>
+        <input id="quality" type="range" min="10" max="100" value="75">
+      </label>
+      <label>Max width (px)
+        <input id="maxw" type="number" min="100" step="100" value="1600">
+      </label>
+      <label>Format
+        <select id="format">
+          <option value="image/jpeg">JPEG</option>
+          <option value="image/webp">WebP</option>
+          <option value="image/png">PNG (no quality setting)</option>
+        </select>
+      </label>
+    </section>
+
+    <div id="summary" class="summary" hidden></div>
+    <section id="results" class="results"></section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
